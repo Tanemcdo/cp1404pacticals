@@ -8,7 +8,7 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    display_subjects(data)
 
 
 def get_data():
@@ -27,6 +27,11 @@ def get_data():
         parts_data += [parts]
     input_file.close()
     return parts_data
+
+
+def display_subjects(data):
+    for part in data:
+        print("{:<6} is taught by {:<12} and has {:>3} students".format(part[0], part[1], part[2]))
 
 
 main()
